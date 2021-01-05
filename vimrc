@@ -50,9 +50,9 @@ set number
 set relativenumber
 set ruler
 "set smartindent
-"set shiftwidth=2
-"set expandtab
-"set tabstop=4
+set shiftwidth=2
+set expandtab
+set tabstop=4
 "set smarttab
 :command Wq wq
 :command Q q
@@ -73,3 +73,4 @@ if &diff
 endif
 set timeoutlen=1000 ttimeoutlen=0
 set runtimepath^=~/.vim/bundle/vlime/vim
+autocmd BufRead,BufNewFile *.htm,*.html,*.css setlocal tabstop=2 shiftwidth=2 softtabstop=2
