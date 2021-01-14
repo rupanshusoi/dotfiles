@@ -108,6 +108,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # No, I will just add them here, thank you.
 alias rg='~/code/legion/language/regent.py'
 alias gst='git status'
+alias lua='~/code/lua-5.4.2/src/lua'
 #alias v='vim'
 function opengl() {
 	g++ $1 -lglut -lGLU -lGL
