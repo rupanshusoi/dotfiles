@@ -8,7 +8,7 @@ case $- in
       *) return;;
 esac
 
-set -o vi
+#set -o vi
 bind -m vi-command 'Control-l: clear-screen'
 bind -m vi-insert 'Control-l: clear-screen'
 
@@ -76,6 +76,9 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Launch tmux on start-up
+#[[ $TERM != "screen" ]] && exec tmux
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -138,6 +141,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go;
+export PATH=$PATH:$GOPATH/bin;
+
 # Autojump
 . /usr/share/autojump/autojump.sh
 
+tmux
+clear
