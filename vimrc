@@ -62,6 +62,7 @@ set incsearch
 set hlsearch
 nnoremap j gj
 nnoremap k gk
+noremap <Leader>s :update<CR>
 "nnoremap ; :
 nnoremap * *``
 :set mouse=a
