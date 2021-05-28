@@ -8,10 +8,6 @@ case $- in
       *) return;;
 esac
 
-#set -o vi
-bind -m vi-command 'Control-l: clear-screen'
-bind -m vi-insert 'Control-l: clear-screen'
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -112,10 +108,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias rg='~/code/legion/language/regent.py'
 alias gst='git status'
 alias lua='~/code/lua-5.4.2/src/lua'
+alias dirs='dirs -v'
 #alias v='vim'
 function opengl() {
 	g++ $1 -lglut -lGLU -lGL
 }
+
+bind -x '"\C-p":clear'
 
 export CDPATH=/home/rootpi/code/PS/PS1-project:/home/rootpi/code/legion/language/src
 
