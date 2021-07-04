@@ -14,7 +14,6 @@ HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=15000
 HISTFILESIZE=15000
@@ -61,6 +60,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+PROMPT_DIRTRIM=1
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -109,7 +109,8 @@ alias rg='~/code/legion/language/regent.py'
 alias gst='git status'
 alias lua='~/code/lua-5.4.2/src/lua'
 alias dirs='dirs -v'
-#alias v='vim'
+alias xo='xdg-open'
+
 function opengl() {
 	g++ $1 -lglut -lGLU -lGL
 }
@@ -147,5 +148,5 @@ export PATH=$PATH:$GOPATH/bin;
 # Autojump
 . /usr/share/autojump/autojump.sh
 
-tmux
+tmux -u
 clear
