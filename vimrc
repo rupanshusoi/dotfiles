@@ -4,6 +4,8 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 Plug 'vlime/vlime'
 Plug 'wlangstroth/vim-racket'
+Plug 'FStarLang/VimFStar', {'for': 'fstar'}
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 au BufNewFile,BufRead *.rg set filetype=regent
@@ -37,3 +39,5 @@ endif
 set timeoutlen=1000 ttimeoutlen=0
 set runtimepath^=~/.vim/bundle/vlime/vim
 autocmd BufRead,BufNewFile *py,*.htm,*.html,*.css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd BufRead,BufNewFile *txt setlocal linebreak
+set pastetoggle=<F3>

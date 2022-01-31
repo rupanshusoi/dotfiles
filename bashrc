@@ -60,7 +60,7 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-PROMPT_DIRTRIM=1
+PROMPT_DIRTRIM=2
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -82,7 +82,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
+    alias grep='grep -n --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
@@ -94,6 +94,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias lst='ls -t'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -106,18 +107,16 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # No, I will just add them here, thank you.
 alias rg='~/code/legion/language/regent.py'
-alias gst='git status'
+alias gs='git status'
+alias gd='git diff'
 alias lua='~/code/lua-5.4.2/src/lua'
 alias dirs='dirs -v'
 alias xo='xdg-open'
+alias c='clear'
 
 function opengl() {
 	g++ $1 -lglut -lGLU -lGL
 }
-
-bind -x '"\C-p":clear'
-
-export CDPATH=/home/rootpi/code/PS/PS1-project:/home/rootpi/code/legion/language/src
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
